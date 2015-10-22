@@ -105,8 +105,6 @@ if ((isset($_POST['submit']) && $_POST['submit'] == 'Login') || (isset($_GET['us
 	}
 } else if (isset($_POST['logout'])) {
 	$_SESSION["logged_in"] = false;
-} else {
-	$_SESSION["logged_in"] = false;
 }
 ?>
 <style>
@@ -154,7 +152,7 @@ include("templates/header.php");
 ?>
 <div class="body">
 <?php
-	if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true) { ?>
+	if ($_SESSION["logged_in"] == true) { ?>
 		<input class="submit_button" type="submit" id="button_money" name="button_money" value="Money">
 		<input class="submit_button" type="submit" id="button_schedule" name="button_schedule" value="Schedule">
 		<input class="submit_button" type="submit" id="button_gradesplanning" name="button_gradesplanning" value="Grades & Planning">
